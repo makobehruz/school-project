@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Student</title>
+    <style>
+        .continer {
+            width: 70%;
+            margin: auto;
+            border: 1px solid black;
+            border-radius: 10px;
+            margin-top: 20px;
+            padding: 30px;
+
+
+        }
+        .button a:hover {
+            cursor: pointer;
+            color: coral;
+
+
+        }
+
+        .button  {
+            padding: 7px;
+            border-radius: 5px;
+
+        }
+        .continer input {
+            width: 70%;
+            padding: 3px;
+        }
+
+        .button a {
+            text-decoration: none;
+            color: black;
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div class="continer">
+        <form method="post">
+            {% csrf_token %}
+            <h1>Create Student</h1><br>
+
+            <label for="first_name">First Name:</label><br><br>
+            <input type="text" name="first_name" id="first_name" required><br><br>
+
+            <label for="last_name">Last Name:</label><br><br>
+            <input type="text" name="last_name" id="last_name"><br><br>
+
+
+            <label for="age">Age:</label><br><br>
+            <input type="number" name="age" id="age"><br><br>
+
+
+            <label for="email">Email:</label><br><br>
+            <input type="number" name="email" id="email"><br><br><br>
+
+            <input type = "submit" value = "Create Student"><br><br>
+            <button class="button"><a href="{% url 'students:list' %}">Back to List</a></button>
+
+        </form>
+    </div>
+</body>
+</html>
